@@ -1,0 +1,9 @@
+# Bloquer les dossiers binaires de Terraform
+**/.terraform/
+
+# Bloquer les états locaux (qui contiennent vos secrets d'infrastructure)
+**/*.tfstate
+**/*.tfstate.*
+
+# Bloquer le fichier de verrouillage si nécessaire
+**/.terraform.lock.hcl

@@ -1,0 +1,4 @@
+environment = "dev"
+location    = "eastus2"
+lab_id      = "CLZ-100"
+name_prefix = "clz"
