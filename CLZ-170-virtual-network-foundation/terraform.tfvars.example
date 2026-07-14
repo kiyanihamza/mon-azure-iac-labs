@@ -1,0 +1,5 @@
+environment     = "dev"
+location        = "eastus2"
+lab_id          = "CLZ-170"
+name_prefix     = "clz"
+subscription_id = null
