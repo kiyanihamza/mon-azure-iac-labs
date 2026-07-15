@@ -46,3 +46,37 @@ terraform destroy -auto-approve
 *   **Sécurisation d'Infrastructures IaaS (Zero-Trust) :** Suppression systématique des vecteurs d'attaque RDP/SSH publics au profit d'architectures réseau privées managées.
 *   **Déploiement d'Azure Bastion :** Conception de la topologie de sous-réseaux dédiés (`AzureBastionSubnet`), d'adressages statiques Standard et provisionnement d'instances de bastion.
 *   **Sécurité d'Accès d'Administration :** Intégration de flux d'administration sécurisés à authentification centralisée et masquage d'IP.
+----
+---
+## 🧹 Commande de Nettoyage Rapide (🚨 À lancer rapidement pour le FinOps !)
++--------------------------------------------------+
+               |                  VOTRE PC (HOST)                 |
+               |  [ Navigateur Web / Portail Azure (Port 443) ]   |
+               +------------------------+-------------------------+
+                                        |
+                                        | (Flux HTTPS sécurisé via Internet)
+                                        v
+               +--------------------------------------------------+
+               |          IP PUBLIQUE DU BASTION (bas-pip)        |
+               +------------------------+-------------------------+
+                                        |
+                                        v
++=======================================|========================================+
+| AZURE VIRTUAL NETWORK (VNet)          |                                        |
+|                                       v                                        |
+|  +------------------------------------+-------------------------------------+  |
+|  | [ AzureBastionSubnet ]                                                   |  |
+|  |                                                                          |  |
+|  |                     HÔTE AZURE BASTION (Passerelle)                      |  |
+|  |                                                                          |  |
+|  +------------------------------------+-------------------------------------+  |
+|                                       |                                        |
+|                                       | (Traduction HTTPS -> RDP interne)      |
+|                                       | (Flux RDP privé - Port 3389)           |
+|                                       v                                        |
+|  +------------------------------------+-------------------------------------+  |
+|  | [ web-snet ]                                                             |  |
+|  |                                                                          |  |
+|  |                     VM WINDOWS (IP Privée uniquement)                    |  |
+|  |                                                                          |  |
+|  +--------------------------------------------------------------------------+  |
