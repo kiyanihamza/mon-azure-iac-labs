@@ -1,0 +1,12 @@
+environment     = "dev"
+location        = "eastus"
+lab_id          = "CLZ-250"
+name_prefix     = "clz"
+admin_username  = "clzadmin"
+admin_cidr      = "203.0.113.10/32"
+subscription_id = null
+
+vm_names = {
+  web = "web"
+  ops = "ops"
+}
