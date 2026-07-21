@@ -1,5 +1,10 @@
 # ⚖️ Lab CLZ-230 : Load Balancer NAT Rules
 
+## 📌 Description du répertoire
+Ce dépôt contient une configuration Terraform pour déployer un laboratoire Azure.
+Il crée un groupe de ressources, un réseau virtuel, un sous-réseau, un Load Balancer Standard, deux machines virtuelles Windows et des règles réseau.
+Le lab montre comment exposer un service web sur le port `80` et sécuriser l'accès RDP via une règle NAT entrante qui redirige le port externe `50001` vers le port interne `3389` d'une VM.
+
 ## 🎯 Objectif Clair
 **Sécuriser l'accès d'administration RDP d'un pool de machines virtuelles privées en utilisant une règle de redirection NAT (Inbound NAT Rule) sur un Azure Standard Load Balancer unique. Le trafic d'administration externe (port 50001) est redirigé vers le port d'écoute interne de la première machine virtuelle (port 3389).**
 
